@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "WF3 Food",
+  "short_name": "WF3 Food",
+  "version": "io.cordova.hellocordova",
+  "description": "A sample international search restaurant application.",
+  "author": "WF3Food Team",
+  "icons": [
+    {
+      "src": "www/img/logo.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}
