@@ -402,7 +402,7 @@ $(document).ready(function(){
 
 					var reviews = $("<div></div>").addClass("reviews");
 					for(var i=0;i<details.reviews.length;i++) {
-						var rev = $("<div></div>").addClass("rev-item").html("<hr><b>"+details.reviews[i].author_name + "</b><br><i>(Note = "+ details.reviews[i].rating + ")</i><br>"+details.reviews[i].text)+"<br>";
+						var rev = $("<div></div>").addClass("rev-item").html("<hr><b>"+details.reviews[i].author_name + "</b><br><i style='color:#ffdf39' class='fas fa-star'></i>" + details.reviews[i].rating + "<br>"+details.reviews[i].text+"<br>");
 						reviews.append(rev);
 					}
 					content.append(reviews);

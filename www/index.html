@@ -29,151 +29,120 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
         <meta name="description" content="Projet Restaurant WF3">
-        
+
         <title>WF3-Food</title>
 
-        <meta name="description" content="Projet Restaurant WF3">
         <!--CSS BootStrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- CSS jQuery Mobile -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-        <!--CSS Perso-->
-        <link rel="stylesheet" href="css/styles.css">
-        <!--Google Fonts-->
 
+        <!--CSS Perso-->
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/styles.css">
 
     </head>
+
     <body>
         <div class="app">
-            <main>
 
-            <div data-role="page" id="pageone">
-            <header>
+            <div data-role="page" id="home">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#">WF3 Food Cordova</a>
-                    <ul>
-                        <li>
-                            <div class="row justify-content-center">
-                                <div class="m-1 changeColor" id="circle1"></div>
-                                <div class="m-1 changeColor" id="circle2"></div>
-                                <div class="m-1 changeColor" id="circle3"></div>
-                                <div class="m-1 changeColor" id="circle4"></div>
-                                <div class="m-1 changeColor" id="circle5"></div>
-                                <div class="m-1 changeColor" id="circle6"></div>
-                                <div class="m-1 changeColor" id="circle7"></div>
-                                <div class="m-1 changeColor" id="circle8"></div>
-                                <div class="m-1 changeColor" id="circle9"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-       
-                <section>
-                    <form id="search-form" class="container py-3">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="searchRest" placeholder="Rechercher un restaurant">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-secondary" id="send"><a href="#pagetwo" data-transition="slideup">Rechercher</a></button>
-                            </div>
-                        </div>
-                    </form>
-                </section>
-                <div data-role ="footer" id="footer">
-                        <a href="mailto:WF3Food@cordova.net" class="text-white font-weight-normal float-left m-2 text-decoration-none">Contactez-nous</a>
-                        <p class="float-right m-2">&copy; WF3Food</p>
-                </div>
-                </div>
-
-                <div data-role="page" id="pagetwo">
-
-                    <section class="py-3" id="results">
-                        <div class="container">
-
-                            <a href="#pageone" data-transition="slideup" data-direction="reverse"><button type="button" class="btn btn-outline-primary fixed-top mt-0" id="newSearch">Faire une autre recherche</button></a>
-
-                            <div id="answers-content">
-
-                            </div>
-                        </div>
-                    </section>
-                
-                </div>
-                   <div data-role="page" id="pagethree"> 
-
-                        <section>
-
-                            <a href="#pagetwo" data-transition="slide"><button type="button" class="btn btn-secondary btn-sm fixed-top mt-0">Retour</button></a>
-
-                            <div class="container py-3">
-                                <div id="map"></div> 
-                            </div>
-
-                        </section>
-
+                    <a class="navbar-brand" href="#">wf3-Food</a>
+                    <div id="colors">
+                        <div class="m-1 changeColor" id="circle1"></div>
+                        <div class="m-1 changeColor" id="circle2"></div>
+                        <div class="m-1 changeColor" id="circle3"></div>
+                        <div class="m-1 changeColor" id="circle4"></div>
+                        <div class="m-1 changeColor" id="circle5"></div>
+                        <div class="m-1 changeColor" id="circle6"></div>
+                        <div class="m-1 changeColor" id="circle7"></div>
+                        <div class="m-1 changeColor" id="circle8"></div>
+                        <div class="m-1 changeColor" id="circle9"></div>
                     </div>
-               
-                <div data-role="page" id="pagefour">
-                    <section id="details">
-                        <div class="container">
-                            <a href="#pagetwo" data-transition="slide" data-direction="reverse">Retour</a>
-                            <div id="details-content"></div>
+                </nav>
+       
+                <form id="search-form" class="container py-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="searchRest" placeholder="Rechercher un restaurant" value="restaurant toulouse">
+                            </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-secondary" id="send"><a href="#results" data-transition="slideup">Rechercher</a></button>
+                        </div>
+                    </div>
+                </form>
 
-            </main>
-            <footer>
-            </footer>
+                <div data-role ="footer" id="footer">
+                    <a href="mailto:WF3Food@cordova.net" class="text-white font-weight-normal float-left m-2 text-decoration-none">Contactez-nous</a>
+                    <p class="float-right m-2">&copy; WF3Food</p>
+                </div>
+            </div>
+
+            <div data-role="page" id="results">
+                <a href="#home" data-transition="slideup" data-direction="reverse"><button type="button" class="btn btn-outline-primary fixed-top mt-0" id="newSearch">Faire une autre recherche</button></a>
+                <div id="results-content"></div>
+            </div>
+
+           <div data-role="page" id="mapview"> 
+                <a href="#results" data-transition="slide">Retour</a>
+                <div id="map-content"></div>
+            </div>
+               
+            <div data-role="page" id="details">
+                <a href="#results" data-transition="slide" data-direction="reverse">Retour</a>
+                <div id="details-content"></div>
+            </div>
+
         </div>
 
         <!-- Base Cordova -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
 
         <!-- Imports -->
             <!-- Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-            <!-- jQuery alt -->
+            <!-- jQuery Mobile -->
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 
-             <!-- Google Places API -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDRn1Dh62wi_CsL2yb-P2PlKCni5jSnqzM"></script>
+             <!-- Google Maps API -->
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDXSo16GjucBJLgaWtidWjZVsPjLq2f4iE"></script>
         
             <!-- jQuery to enable Ajax -->
-        <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+        <script src="js/jquery-2.2.4.js"></script>
 
             <!-- Our scripts -->
-        <script src="js/ajaxQueries.js"></script>
+
+
+
+        <script src="js/changeColor.js"></script>
+        <script src="js/getPlaces.js"></script>
         <script src="js/initMap.js"></script>
 
-            <!-- <script type="text/javascript" src="js/initPlaces.js"></script> -->
-        <script src="js/script.js"></script>
+        <!-- <script src="js/ajaxQueries.js"></script> -->
+        <!-- <script src="js/initPlaces.js"></script> -->
+        <!-- <script src="js/script.js"></script> -->
         
-
-        <!-- 
-        <script src="js/data.js"></script>
-        <script src="js/dataProcess.js"></script> -->
     </body>
 </html>
+
+<!-- clé axelGoogleMaps     = AIzaSyDRn1Dh62wi_CsL2yb-P2PlKCni5jSnqzM -->
+<!-- clé mg12m              = AIzaSyDXSo16GjucBJLgaWtidWjZVsPjLq2f4iE -->
