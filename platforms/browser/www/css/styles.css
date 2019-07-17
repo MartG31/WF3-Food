@@ -33,21 +33,10 @@ li { list-style: none; }
 
 /* CLASSES COMMUNES */
 
-.app {
-	background-color: #000;
-}
-
-/*#results, #details {
-	background-color: #f8f9fa;
-	border-radius: 5%;
-	width: 90%;
-	margin: 50px auto 0 auto;
-}
-*/
-
 div[data-role="page"] {
 	background-color: #17a2b8;
 }
+
 
 
 
@@ -94,15 +83,30 @@ nav {
 }
 
 
-#searchRest {
+#search-input {
 	margin: auto;
 	box-shadow: #555 3px 3px 3px;
+	padding: .5em;
 }
 
 #send {
-	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	max-width: 10em;
+	border-radius: .5em;
 	box-shadow: #555 3px 3px 3px;
+	background-color: rgba(255,255,255,.9);
+
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: .5em;
+	box-shadow: #555 3px 3px 3px;
+	margin: auto;
 }
+
+
 
 #footer{
 	height: 50px;

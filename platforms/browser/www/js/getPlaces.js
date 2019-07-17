@@ -16,15 +16,14 @@ $(document).ready(function(){
 
 	// BARRE DE RECHERCHE
 
-	$('#search').change(function(e) {
+	$('#send').click(function(e) {
 
-		e.preventDefault();
-
-		var query = $(this).val();
+		var query = $('#search-input').val();
 		console.log('Nouvelle requête à envoyer : '+query);
 
 		if(query.length > 0) {
 
+			$('#results-content').html("");
 			searchQuery(query);
 		}
 	});
@@ -172,9 +171,6 @@ $(document).ready(function(){
 	const axUrl = 'https://axessweb.io/api/google';
 
 	const mgKey = 'AIzaSyDXSo16GjucBJLgaWtidWjZVsPjLq2f4iE';
-
-	searchQuery("restaurant toulouse");
-
  
 	function searchQuery(req) {
 
@@ -246,7 +242,7 @@ $(document).ready(function(){
 	function photoQuery(photo) {
 
 			var src = 	'https://maps.googleapis.com/maps/api/place/photo'+
-						'?maxwidth=1600'+
+						'?maxwidth=640'+
 						'&photoreference='+
 						photo.photo_reference+
 						'&key='+

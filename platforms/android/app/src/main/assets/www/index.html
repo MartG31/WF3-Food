@@ -71,20 +71,10 @@
                     </div>
                 </nav>
        
-                <form id="search-form" class="container py-3">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="searchRest" placeholder="Rechercher un restaurant" value="restaurant toulouse">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-secondary" id="send"><a href="#results" data-transition="slideup">Rechercher</a></button>
-                        </div>
-                    </div>
-                </form>
+                <div id="search">
+                    <input id="search-input" type="text" placeholder="Rechercher un restaurant" value="restaurant toulouse">
+                    <a id="send" href="#results" data-transition="slideup">Rechercher</a>
+                </div>
 
                 <div data-role ="footer" id="footer">
                     <a href="mailto:WF3Food@cordova.net" class="text-white font-weight-normal float-left m-2 text-decoration-none">Contactez-nous</a>
