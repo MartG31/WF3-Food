@@ -62,7 +62,7 @@ $(document).ready(function(){
 				var head = $("<div></div>").addClass("item-head");
 
 					var fig = $("<figure></figure>").addClass("item-fig");
-						var img = $("<img>").addClass("item-img");
+						var img = $("<img>").addClass("item-img").attr("src",photoQuery(this.search.photos[0]));
 					fig.append(img);
 
 				head.append(fig);
@@ -124,15 +124,17 @@ $(document).ready(function(){
 
 			var page = $("<div></div>").addClass("det-page");
 
+				// NOM
 				var name = $("<div></div>").addClass("det-name").text(this.details.name);
 				page.append(name);
 
+				// TEL
 				var tel = $("<a></a>").addClass("det-tel")
 					.attr("href","tel:"+this.details.international_phone_number)
 					.text(this.details.formatted_phone_number);
-
 				page.append(tel);
 
+				// WEBSITE
 				if(this.details.website) {
 
 					var web = $("<a></a>").addClass("det-web")
@@ -141,15 +143,24 @@ $(document).ready(function(){
 					page.append(web);
 				}
 
-
+				// HORAIRES D'OUVERTURE
 				page.append($("<div></div>").html("<div>Horaires d'ouverture :</div>"+this.details.opening_hours.weekday_text));
 
+				// AVIS
 				var reviews = $("<div></div>").addClass("reviews");
-				for(var i=0;i<this.details.reviews.length;i++) {
+				for(var i=0;i<this.details.reviews.length;i++) 
+				{
 					var rev = $("<div></div>").addClass("rev-item").html("<hr><b>"+this.details.reviews[i].author_name + "</b><br><i style='color:#ffdf39' class='fas fa-star'></i>" + this.details.reviews[i].rating + "<br>"+this.details.reviews[i].text+"<br>");
 					reviews.append(rev);
 				}
 				page.append(reviews);
+
+				// PHOTOS
+				for(var i=0;i<this.details.photos.length;i++) 
+				{
+					var img = $("<img>").addClass("det-img").attr("src",photoQuery(this.details.photos[i]));
+					page.append(img);
+				}
 
 			this.page = page;
 		};
@@ -194,7 +205,7 @@ $(document).ready(function(){
 					placesTab.push(newPlace);
 
 					detailsQuery(newPlace);
-					photoQuery(newPlace, true);
+					// photoQuery(newPlace, true);
 				}
 			},
 			error: function(error){
@@ -232,20 +243,16 @@ $(document).ready(function(){
 		});
 	}
 
-	function photoQuery(place, mainPhoto) {
+	function photoQuery(photo) {
 
-		if(mainPhoto) {
-			var src = 'https://maps.googleapis.com/maps/api/place/photo'+
-			'?maxwidth=1600'+
-			'&photoreference='+
-			place.search.photos[0].photo_reference+
-			'&key='+
-			mgKey;
+			var src = 	'https://maps.googleapis.com/maps/api/place/photo'+
+						'?maxwidth=1600'+
+						'&photoreference='+
+						photo.photo_reference+
+						'&key='+
+						mgKey;
 
-			place.vignette.find(".item-img").attr("src",src);
-		} else {
-			place.photos.push();
-		}
+			return src;
 	}
 
 });
