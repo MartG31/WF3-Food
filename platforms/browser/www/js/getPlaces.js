@@ -29,26 +29,6 @@ $(document).ready(function(){
 		}
 	});
 
-	// UPDATE PAGE DETAILS
-
-	// $('.to-det').click(function(e) {
-
-	// 	e.preventDefault();
-
-	// 	console.log('test');
-
-	// 	var id = $(this).closest(".list-item").attr("data-id");
-	// 	console.log(id);
-	// 	placesTab.each(function(p) {
-
-	// 		if(p.details != null && p.search.id == id) {
-	// 			$("#details-content").html(p.page);
-	// 			return false; // Termine la boucle each une fois la place trouvée
-	// 		}
-	// 	});
-
-	// });
-
 
 
 	// PLACE OBJECTS
@@ -144,9 +124,10 @@ $(document).ready(function(){
 
 			var page = $("<div></div>").addClass("det-page");
 
-				var name = $("<div></div>").addClass("item-name").text(this.details.name);
+				var name = $("<div></div>").addClass("det-name").text(this.details.name);
+				page.append(name);
 
-				var tel = $("<a></a>").addClass("item-tel")
+				var tel = $("<a></a>").addClass("det-tel")
 					.attr("href","tel:"+this.details.international_phone_number)
 					.text(this.details.formatted_phone_number);
 
@@ -154,7 +135,7 @@ $(document).ready(function(){
 
 				if(this.details.website) {
 
-					var web = $("<a></a>").addClass("item-website")
+					var web = $("<a></a>").addClass("det-web")
 						.attr("href",this.details.website)
 						.text(this.details.website);
 					page.append(web);

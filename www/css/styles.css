@@ -126,40 +126,8 @@ nav {
 
 /* PAGE : RESULTATS */
 
-#newSearch {
-	background-color: #fff;
-}
 
-/*.list-item {
-	background-color: rgba(0, 0, 0, 0.05);
-	border-radius: 5%;
-	width: 90%;
-	margin: 1em auto;
-}
 
-.item-name {
-	font-weight: bold;
-}
-
-.item-adress {
-	font-style: italic;
-}
-
-.rating {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-}
-
-.rating-note {
-	width: 100%;
-	font-size: 1.4em;
-}
-
-.total-ratings {
-	font-size: 0.8em;
-	color: #555;
-}*/
 
 #results {
 	padding: .5em;
@@ -261,6 +229,31 @@ nav {
 
 
 
+#newSearch {
+	background-color: #fff;
+}
+
+
+
+.rating {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.rating-note {
+	width: 100%;
+	font-size: 1.4em;
+}
+
+.total-ratings {
+	font-size: 0.8em;
+	color: #555;
+}
+
+
+
+
 
 /* PAGE : MAP */
 
@@ -290,17 +283,15 @@ nav {
 	background-color: rgba(255,255,255,0.8);
 }
 
-/*#details-content .toMap,
-#details-content .toDetails {
-    display: none;
+.det-name {
+	font-size: 1.4em;
+	font-weight: 700;
 }
 
-.toMap, .toDetails {
+.det-tel {
 	display: block;
-	text-align: center;
-	margin: 2px auto;
-	border-radius: 1px;
-	background-color: rgba(0,0,0,0.4);
-	padding: 3px;
-	transition: background-color .5s;
-}*/
+}
+
+.det-web {
+	display: block;
+}
