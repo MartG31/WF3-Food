@@ -4,12 +4,12 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>WF3 Food</name>
+    <name>wf3-Food</name>
     <description>
         A sample international search restaurant application.
     </description>
     <author>
-        WF3Food Team
+        wf3-Food team
     </author>
     <content src="index.html" />
     <icon src="www/img/logo.png" />
