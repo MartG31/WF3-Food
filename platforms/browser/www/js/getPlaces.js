@@ -29,6 +29,26 @@ $(document).ready(function(){
 		}
 	});
 
+	// UPDATE PAGE DETAILS
+
+	// $('.to-det').click(function(e) {
+
+	// 	e.preventDefault();
+
+	// 	console.log('test');
+
+	// 	var id = $(this).closest(".list-item").attr("data-id");
+	// 	console.log(id);
+	// 	placesTab.each(function(p) {
+
+	// 		if(p.details != null && p.search.id == id) {
+	// 			$("#details-content").html(p.page);
+	// 			return false; // Termine la boucle each une fois la place trouvée
+	// 		}
+	// 	});
+
+	// });
+
 
 
 	// PLACE OBJECTS
@@ -55,7 +75,8 @@ $(document).ready(function(){
 		this.buildListItem = function() {
 
 			// CREATE LIST ITEM
-			var listItem = $("<div></div>").addClass("list-item");
+			var listItem = $("<div></div>").addClass("list-item").attr("data-id", this.search.id);
+
 
 			// CREATE CONTENT
 				var head = $("<div></div>").addClass("item-head");
@@ -123,6 +144,8 @@ $(document).ready(function(){
 
 			var page = $("<div></div>").addClass("det-page");
 
+				var name = $("<div></div>").addClass("item-name").text(this.details.name);
+
 				var tel = $("<a></a>").addClass("item-tel")
 					.attr("href","tel:"+this.details.international_phone_number)
 					.text(this.details.formatted_phone_number);
@@ -147,10 +170,7 @@ $(document).ready(function(){
 				}
 				page.append(reviews);
 
-
-
 			this.page = page;
-			$("#details-content").html(page);
 		};
 	}
 
@@ -220,6 +240,10 @@ $(document).ready(function(){
 
 				place.details = rep.result;
 				place.buildDetails();
+
+				place.vignette.find(".to-det").click(function() {
+					$("#details-content").html(place.page);
+				});
 			},
 			error: function(error){
 				console.log('details error');
