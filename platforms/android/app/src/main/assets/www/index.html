@@ -71,10 +71,21 @@
                     </div>
                 </nav>
        
+                <div data-role="navbar" data-iconpos="bottom">
+
+                    <ul>
+                        <li>
+                        <a href="#home" data-transition="slide" data-icon="home">Accueil</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+
                 <div id="search">
-                    <input id="search-input" type="text" placeholder="Rechercher un restaurant" value="restaurant toulouse">
+                    <input id="search-input" type="text" data-type="search" name="search" placeholder="Rechercher un restaurant" value="restaurant toulouse">
                     <a id="send" href="#results" data-transition="slideup">Rechercher</a>
                 </div>
+
 
                 <div data-role ="footer" id="footer">
                     <a href="mailto:WF3Food@cordova.net" class="text-white font-weight-normal float-left m-2 text-decoration-none">Contactez-nous</a>
@@ -83,18 +94,73 @@
             </div>
 
             <div data-role="page" id="results">
-                <a href="#home" data-transition="slideup" data-direction="reverse"><button type="button" class="btn btn-outline-primary fixed-top mt-0" id="newSearch">Faire une autre recherche</button></a>
+
+                <div data-role="header" data-position="fixed">
+
+                    <div data-role="navbar" data-iconpos="bottom">
+                    
+                        <ul>
+
+                            <li>
+                                <a href="#home" data-transition="fade" data-icon="search" >Faire une autre recherche</a>
+                            </li>
+
+                        </ul>
+                        
+                </div>              
+
+                </div>
+
                 <div id="results-content"></div>
+
             </div>
 
            <div data-role="page" id="mapview"> 
-                <a href="#results" data-transition="slide">Retour</a>
+
+                <div data-role="navbar">
+                    
+                    <ul>
+                        <li>
+                            <a href="#home" data-transition="fade" data-icon="search"></a>
+                        </li>
+                        <li>
+                            <a href="#home" data-transition="slidedown" data-icon="home"></a>
+                        </li>
+                        <li>
+                            <a href="#results" data-transition="slide" data-icon="arrow-r"></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+                
                 <div id="map-content"></div>
             </div>
                
             <div data-role="page" id="details">
-                <a href="#results" data-transition="slide" data-direction="reverse">Retour</a>
+
+                <div data-role="header" data-position="fixed">
+
+                    <div data-role="navbar">
+                        
+                        <ul>
+                            <li>
+                                <a href="#results" data-transition="slide" data-direction="reverse" data-icon="arrow-l"></a>
+                            </li>
+                            <li>
+                                <a href="#home" data-transition="slidedown" data-icon="home"></a>
+                            </li>
+                            <li>
+                                <a href="#home" data-transition="fade" data-icon="search"></a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </div>
+
                 <div id="details-content"></div>
+
             </div>
 
         </div>
