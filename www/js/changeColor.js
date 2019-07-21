@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() {
 	$('.changeColor').click(function(){
 		var color = $(this).css("background-color");
